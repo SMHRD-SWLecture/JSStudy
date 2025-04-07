@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var subject = [];
+        var score = [];
+        var count = prompt('과목 수를 입력해주세요');
+        var sum = 0; // 총합
+        var avg = 0; // 평균
+        
+        for(var i = 0; i < count; i++) {
+            subject.push(prompt('점수를 입력할 과목명을 입력해주세요 >> '));
+        }
+        for(var i = 0; i < count; i++) {
+            score.push(prompt(`${subject[i]}의 점수 입력 >> `));
+            sum += parseInt(score[i]);
+        }
+        avg = parseInt(sum / count);
+
+        subject.push('총합');
+        subject.push('평균');
+        score.push(sum);
+        score.push(avg);
+
+        document.write("<table border = '1px solid black'>");
+            document.write('<tr>');
+                for(var i = 0; i < subject.length; i++) {
+                document.write('<th>' + subject[i] + '</th>');
+                }
+            document.write('</tr>');
+
+            document.write('<tr>');
+                for(var i = 0; i < subject.length; i++) {
+                document.write('<td>' + score[i] + '</td>');
+                }
+            document.write('</tr>');
+        document.write('</table>');
+
+    </script>
+</body>
+</html>
