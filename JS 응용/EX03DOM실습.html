@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="num">0</p>
+    <button class="btn">+1 증가</button>
+    <button class="btn">-1 감소</button>
+
+    <script>
+        let btn = document.getElementsByClassName("btn");
+        let num = document.getElementById("num");
+
+        btn[0].addEventListener("click", function(){
+            num.innerText++;
+        })
+        btn[1].onclick = () => {
+            if(num.innerText > 0){
+                num.innerText--;
+            }
+        }
+    </script>
+</body>
+</html>

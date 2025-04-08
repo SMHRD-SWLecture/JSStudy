@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="text">클라우드반 안녕</h1>
+    <script>
+
+        // DOM (Document Object Model) : HTML 문서 내에 있는 모든 요소들을 JS에서 접근할 수 있도록 객체화 한 것
+
+        // 1. DOM에 있는 태그들에 접근하는 방법
+
+        // 1-1) document.getElementById("id값")
+        // 태그의 id값을 기준으로 요소를 꺼내오는 방법
+        // return type : HTMLElement 객체
+        let text = document.getElementById("text");
+        console.log(text.innerText);
+        text.innerText = "영표쌤반 안녕";
+
+        // 1-2) document.getElementsByTagName("태그명")
+        // 여러 개의 태그들을 가져오고 싶을 때 사용
+        // return type : HTMLCollection (유사배열 형태)
+
+        /*
+            1-3)
+            document.getElementsByTagName("태그명")
+            document.getElementsByName("name 속성값")
+            >> return type : HTMLCollection
+        */
+
+        // 2. DOM 안에 태그들에 접근하는 방법 - 2번째
+        /*
+            2-1) document.querySelector("css 선택자")
+            > return type : Element
+            > 단 1개의 요소만 되돌려줌
+        */
+        let qtext = document.querySelector("#text");
+        console.log(qtext);
+
+        /*
+            2-2) document.querySelectorAll("css 선택자")
+            > return type : NodeList (유사배열)
+            > 여러 개의 태그들을 유사 배열 형태로 되돌려줌
+        */
+        let qh2 = document.querySelectorAll(".h2");
+        console.log(qh2);
+
+        // 추천방법 >> getElement ~~
+
+    </script>
+</body>
+</html>

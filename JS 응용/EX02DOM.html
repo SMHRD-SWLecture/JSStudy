@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">텍스트</h1>
+    <button id="btn">클릭</button>
+    
+    <script>
+
+        /*
+            이벤트
+            : 사용자가 웹페이지에서 하는 모든 행위
+            ex. 버튼 클릭, 키보드 누르기, 마우스 hover 등
+        */
+
+        // JS 이벤트 처리하는 방법
+
+        // 1. 대상이 되는 태그 꺼내오기
+        var btn = document.getElementById("btn");
+
+        // 2. 태그에게 이벤트를 처리할 수 있는 함수 달아주기
+        btn.onclick = function(){
+            var text = document.getElementById("text");
+            text.innerText = "영표쌤";
+        }
+            
+        btns[2].addEventListener("click", addTag);
+        function addTag() {
+            div.innerHTML += `<ul>
+                                <li>선영표</li>
+                                <li>김자영</li>
+                                <li>장영민</li>
+                             </ul>`
+        }
+
+
+
+    </script>
+</body>
+</html>
