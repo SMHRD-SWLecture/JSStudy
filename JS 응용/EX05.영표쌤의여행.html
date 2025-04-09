@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/moveImgStyle.css">
+</head>
+<body>
+    <div id="bg">
+        <img id='pyo' src='img/pyo.png'>
+        <button class='btn left'>LEFT</button>
+        <button class='btn right'>RIGHT</button>
+    </div>
+    <script>
+        var pyo = document.getElementById('pyo');
+        var pos = 0;
+        
+        // 이벤트에 대한 정보를 담은 객체 --> e
+        document.addEventListener('keydown', function(e) {
+            console.log(e.keyCode);
+
+            if(e.keyCode == 39) {
+                // 오른쪽 key -> 그림을 왼쪽으로 부터 50px 이동
+                if(pos < 1200) {
+                    pos += 50;
+                }
+                
+            }
+            else if(e.keyCode == 37) {
+                if(pos > 0) {
+                    pos -= 50;
+                }
+            }
+            pyo.style.left = pos + 'px';
+        });
+    </script>
+</body>
+</html>
