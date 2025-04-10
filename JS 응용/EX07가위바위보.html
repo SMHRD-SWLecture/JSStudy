@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Orbitron:wght@700&family=Song+Myung&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/rock.css">
+</head>
+
+<body>
+    <div align="center">
+        <br>
+        <h1 id = "score">0</h1>
+        <br>
+        <table>
+            <tr>
+                <th>USER</th>
+            </tr>
+            <tr>
+                <td align="center"> <img id="userImg" src="img/rock.png" alt=""></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="user">가위</button>
+                    <button class="user">바위</button>
+                    <button class="user">보</button>
+                </td>
+            </tr>
+        </table>
+        &nbsp;&nbsp;&nbsp;
+        <h1>vs</h1>
+        <table class="computer">
+            <tr>
+                <th>COMPUTER</th>
+            </tr>
+            <tr>
+                <td align="center"> <img id='comImg' src="img/rock.png" alt=""></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="computer">가위</button>
+                    <button class="computer">바위</button>
+                    <button class="computer">보</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let btns = document.getElementsByClassName('user');
+        let userImg = document.getElementById('userImg');
+        let comImg = document.getElementById('comImg');
+        let score = document.getElementById('score');
+        let imgList = ['img/scissors.png', 'img/rock.png', 'img/paper.png'];
+
+        // 랜덤 숫자 생성
+        // 0 ~ 2 사이의 랜덤 숫자 생성
+        // Math.random() : 0 ~ 1 사이의 랜덤 숫자 생성
+        // 0.999999.... * 3 = 2.9999.... -> 2
+
+        for(let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function() {
+                userImg.src = imgList[i];
+
+                let comIdx = Math.floor((Math.random() * 3));
+                comImg.src = imgList[comIdx];
+
+                if(this.innerText == '가위') {
+                    if(comIdx == 2) {
+                        score.innerText++;
+                    }
+                }
+                else if(this.innerText == '바위') {
+                    if(comIdx == 0) {
+                        score.innerText++;
+                    }
+                }
+                else {
+                    if(comIdx == 1) {
+                        score.innerText++;
+                    }
+                }
+                
+            });
+        }
+        
+    </script>
+</body>
+
+</html>

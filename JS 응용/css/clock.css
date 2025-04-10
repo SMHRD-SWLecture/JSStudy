@@ -1,0 +1,15 @@
+ /*전체 배경색상 설정*/
+ body {
+    background: black;
+}
+/*글자 */
+.clock {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    color: #17D4FE;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}
