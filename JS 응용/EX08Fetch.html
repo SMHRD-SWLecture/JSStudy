@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="date">
+    <button id="btn">조회</button>
+    <script>
+        // kofic api 키 : c47935c85882824419ddcffe9d8eaf4f
+        // 
+        let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json';
+        let key = '?key=c47935c85882824419ddcffe9d8eaf4f';
+        let targetDt = '&targetDt=20250401';
+        let finalurl = url + key + targetDt;
+        let btn = document.getElementById('btn');
+        let date = document.getElementById('date');
+
+        btn.addEventListener('click', async function () {
+            let reqdate = document.getElementById('reqdate').value;
+        }
+
+        await fetch(finalurl)
+            .then((res)=>{
+                return res.json();
+            })
+            .then((data)=>{
+                let moveList = data.boxOfficeResult.dailyBoxOfficeList;
+                console.log(moveList[0].movieNm);
+
+                let table = document.createElement('table');
+
+                space.innerHTML = "";
+                space.appendChild(table);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+        })
+    </script>
+</body>
+</html>
